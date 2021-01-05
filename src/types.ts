@@ -2,7 +2,10 @@ import * as React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 
 export interface ActionSheetProps {
-  showActionSheetWithOptions: (options: ActionSheetOptions, callback: (i: number) => void | Promise<void>) => void;
+  showActionSheetWithOptions: (
+    options: ActionSheetOptions,
+    callback: (i: number) => void | Promise<void>
+  ) => void;
 }
 
 // for iOS
@@ -22,6 +25,7 @@ export interface ActionSheetOptions extends ActionSheetIOSOptions {
   tintIcons?: boolean;
   textStyle?: TextStyle;
   titleTextStyle?: TextStyle;
+  renderTitle?: () => React.ReactNode;
   messageTextStyle?: TextStyle;
   autoFocus?: boolean;
   showSeparators?: boolean;
